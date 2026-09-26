@@ -8,6 +8,21 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.9] - 2026-09-26
+
+### Added
+
+- Home can hold an empty block, to leave a place open.
+- Starting the house over from its settings deletes every device, room and automation Domely kept,
+  so setting it up again starts from Home Assistant alone.
+- Automations can be switched off for the whole house: none of them runs until they are switched on
+  again, and each comes back as it was.
+
+### Fixed
+
+- Device state now reaches Google Home. Every report the add-on made had been refused since it
+  started reporting, and nothing said so outside the log.
+
 ## [0.1.8] - 2026-09-25
 
 ### Added
