@@ -310,9 +310,9 @@ Three images, one per process, each a multi-arch manifest covering `linux/amd64`
 
 | Image | From |
 | --- | --- |
-| `ghcr.io/raymonbb/domely-adapter` | [`agent/adapter/Dockerfile`](../../agent/adapter/Dockerfile) |
-| `ghcr.io/raymonbb/domely-api` | [`agent/api/Dockerfile`](../../agent/api/Dockerfile) |
-| `ghcr.io/raymonbb/domely-tunnel` | [`agent/tunnel/Dockerfile`](../../agent/tunnel/Dockerfile) |
+| `ghcr.io/domely-app/domely-adapter` | [`agent/adapter/Dockerfile`](../../agent/adapter/Dockerfile) |
+| `ghcr.io/domely-app/domely-api` | [`agent/api/Dockerfile`](../../agent/api/Dockerfile) |
+| `ghcr.io/domely-app/domely-tunnel` | [`agent/tunnel/Dockerfile`](../../agent/tunnel/Dockerfile) |
 
 The tag is the version in the repository root's [`VERSION`](../../VERSION), which is the single
 source: [`CHANGELOG.md`](../../CHANGELOG.md), `deploy/addon/config.yaml` and the three tags in
@@ -351,9 +351,9 @@ once needs a builder that is not the default one, and is what the release pipeli
 
 ```bash
 docker buildx create --name domely --driver docker-container --use
-docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.9 -t ghcr.io/raymonbb/domely-adapter:0.1.9 agent/adapter
-docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.9 -t ghcr.io/raymonbb/domely-api:0.1.9 agent/api
-docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.9 -t ghcr.io/raymonbb/domely-tunnel:0.1.9 agent/tunnel
+docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.11 -t ghcr.io/domely-app/domely-adapter:0.1.11 agent/adapter
+docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.11 -t ghcr.io/domely-app/domely-api:0.1.11 agent/api
+docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.11 -t ghcr.io/domely-app/domely-tunnel:0.1.11 agent/tunnel
 ```
 
 Those are run from the repository root, and without `--push` they build and go nowhere, which is

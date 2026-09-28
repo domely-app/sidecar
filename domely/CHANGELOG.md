@@ -8,6 +8,26 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.11] - 2026-09-28
+
+### Changed
+
+- The add-on's image is now published under `ghcr.io/domely-app`. Nothing in it changed since
+  0.1.10.
+
+## [0.1.10] - 2026-09-27
+
+### Added
+
+- Scenes can be composed in Domely from published devices, and the add-on switches them step by
+  step.
+- Covers: open, close and set a position.
+- A notification from the house also reaches a page with Domely open, without push permission.
+
+### Changed
+
+- Starting the house over also deletes the scenes composed in Domely.
+
 ## [0.1.9] - 2026-09-26
 
 ### Added
@@ -140,7 +160,7 @@ entries and `config.yaml` disagree.
 
 ## [0.1.0] - 2026-08-31
 
-The first release. Add [raymonbb/domely-addons](https://github.com/raymonbb/domely-addons) as a
+The first release. Add [domely-app/sidecar](https://github.com/domely-app/sidecar) as a
 repository in the add-on store and Domely appears there.
 
 ### Added

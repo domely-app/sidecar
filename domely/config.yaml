@@ -7,10 +7,10 @@ name: Domely
 # For an add-on the version is the image tag, and bumping it is what a user sees as an update. The
 # repository root's VERSION file is the single source and deploy/addon/test.sh fails the build when
 # this line, VERSION, both changelogs and the image tags in deploy/standalone drift apart.
-version: "0.1.9"
+version: "0.1.11"
 slug: domely
 description: Share a simple, premium app for your home with the people who live in it
-url: https://github.com/raymonbb/domely-addons
+url: https://github.com/domely-app/sidecar
 # The two architectures Home Assistant supports. The three 32-bit identifiers the supervisor still
 # parses are deprecated, no image is built for them, and deploy/addon/test.sh fails the build if one
 # turns up here or in the Dockerfile. https://github.com/home-assistant/docker-base
@@ -21,7 +21,7 @@ arch:
 # The image is built from the repository root rather than from this folder, because it assembles
 # the same three components deploy/standalone ships and they live above this directory. So it is
 # pulled rather than built on the machine, which is how add-ons are meant to ship anyway.
-image: ghcr.io/raymonbb/domely-addon
+image: ghcr.io/domely-app/domely-addon
 
 # Started after Home Assistant, which is what `application` means and also the supervisor's
 # default. Load-bearing rather than decorative: the adapter treats a Home Assistant that does not
