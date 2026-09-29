@@ -51,6 +51,7 @@ under its own group.
 | `test_light_entity` | A light the add-on switches on and off once at startup to prove it can control Home Assistant. Empty skips the test. |
 | `api_threads` | How many app connections this home serves at once. One is held for as long as a phone has the app open, so count the phones and leave room. |
 | `cors_origins` | Which addresses may open this home in a browser, comma separated. Empty means the Domely Cloud address above, which is where the app is served from. |
+| `unpair` | The home ID to forget on the next start, so the add-on asks for a new pairing code. Any other value is ignored. See [Re-pairing](#re-pairing). |
 
 Everything else is fixed by the image on purpose: the paths under `/data`, the addresses the two
 halves of the Agent meet on, and the shared secret between them, which is generated the first time
@@ -76,6 +77,11 @@ right in. See ADR-0009 and ADR-0010 in the repository for the whole argument.
 The sidebar page is reachable only from Home Assistant itself. The add-on refuses it to anything
 that did not arrive through the supervisor's ingress proxy, and the tunnel refuses it at the edge,
 so it is not reachable from the internet at all.
+
+Before the add-on is paired, the page shows the pairing code, but only to a Home Assistant
+administrator. Whoever redeems the code owns the home, and Home Assistant lets any signed-in user
+open an add-on's page, even one whose sidebar entry they cannot see. Anyone else sees where to find
+the code instead: in the add-on's log.
 
 ## The Home Assistant this talks to
 
@@ -118,13 +124,28 @@ So remove the home in the app first:
 
 Doing it in the other order is recoverable, but only by hand and only from the app.
 
-## Re-pairing, and what it costs today
+## Re-pairing
 
 Removing the home in the app tells Domely Cloud to forget this house. It does not tell the add-on:
 the Agent still holds the identity it was handed at pairing, and it will not ask for a new code
-until it is made to forget that identity. Forgetting it is one command inside the container today,
-and the add-on has no button for it. That is a real gap rather than a design, and it is worth
-asking about rather than working around.
+until it is told to forget it. It never decides that by itself, because a cloud that is briefly
+wrong about this house would otherwise take it offline.
+
+To make it forget:
+
+1. Find the home ID. The app shows it when you remove the home. It is also in the add-on's log:
+   every start logs `Paired with Domely Cloud home=…`, and a home the cloud no longer knows logs it
+   again in the line saying the cloud refused this Agent.
+2. Put that ID in the `unpair` option on the Configuration tab, save, and restart the add-on.
+3. The log shows a new pairing code. Redeem it as in [Pairing](#pairing).
+
+You can leave the option filled in afterwards. It only ever unpairs the home it names, and after
+pairing again this add-on belongs to a different one, so later restarts leave it alone. Only a
+Home Assistant administrator can change add-on options, which is what keeps this from being a
+button anyone in the house can press.
+
+Your rooms and devices keep their IDs, so shares still point at the same devices after pairing
+again.
 
 What it is not is a reason to uninstall. Uninstalling takes `/data` with it, and `/data` is where
 your rooms, devices and above all their identities live, the identities every share you handed out

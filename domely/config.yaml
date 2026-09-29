@@ -7,7 +7,7 @@ name: Domely
 # For an add-on the version is the image tag, and bumping it is what a user sees as an update. The
 # repository root's VERSION file is the single source and deploy/addon/test.sh fails the build when
 # this line, VERSION, both changelogs and the image tags in deploy/standalone drift apart.
-version: "0.1.11"
+version: "0.1.12"
 slug: domely
 description: Share a simple, premium app for your home with the people who live in it
 url: https://github.com/domely-app/sidecar
@@ -53,6 +53,10 @@ ingress_port: 8080
 # it is written without one: a leading slash here arrives as a doubled one there.
 ingress_entry: ingress
 panel_icon: mdi:home-heart
+# Only administrators see the sidebar entry. The supervisor's own default, written down because it
+# hides the entry and nothing more: the proxy lets any signed-in user reach the page, which is why
+# the page asks Home Assistant who is looking before it shows a pairing code (#124).
+panel_admin: true
 
 # The whole of /data is what a per-add-on backup captures, and everything durable is named into it
 # by the Dockerfile for exactly that reason. Hot, so the house keeps working while the backup runs.
@@ -90,3 +94,7 @@ schema:
   api_threads: int(1,64)
   # Blank means the origin of cloud_url, which is where the app is served from.
   cors_origins: str?
+  # The home to unpair on the next start, by its home_id, because the add-on has no shell for
+  # domely:unpair (#99). Naming the home is what makes it safe to leave set: after a re-pair it
+  # names a home that no longer exists here, and every later start leaves the Agent paired.
+  unpair: str?

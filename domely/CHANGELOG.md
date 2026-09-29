@@ -8,6 +8,23 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.12] - 2026-09-29
+
+### Added
+
+- An `unpair` option: put in the home ID from the log and restart, and the add-on asks for a new
+  pairing code. It only unpairs the home it names, so it is safe to leave filled in.
+
+### Fixed
+
+- With the energy insights on, a power meter now sends its peak power per hour, also beside a
+  kilowatt-hour meter for the same thing and for the P1 meter's net power.
+
+### Security
+
+- The sidebar page shows the pairing code only to a Home Assistant administrator. Anyone else is
+  pointed at the add-on's log, which only an administrator can read.
+
 ## [0.1.11] - 2026-09-28
 
 ### Changed
