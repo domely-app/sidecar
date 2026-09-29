@@ -8,6 +8,20 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.13] - 2026-09-29
+
+### Added
+
+- The Domely page in the sidebar can unpair the add-on: type `ONTKOPPEL` as a Home Assistant
+  administrator. Rooms and devices are kept. When Domely Cloud no longer knows this house, the page
+  says so instead of linking to it.
+- New devices in Home Assistant are remembered, so "Nieuw gevonden" in Domely's Beheer shows what
+  appeared since you last looked. Ignored ones can be brought back.
+
+### Changed
+
+- A quick action switches every device it can, at once, even when one of them fails.
+
 ## [0.1.12] - 2026-09-29
 
 ### Added

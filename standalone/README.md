@@ -217,7 +217,9 @@ docker run --rm -v <the old volume>:/from -v standalone_agent-tunnel:/to alpine 
 ```
 
 If it is gone, the only way back is `docker compose exec api php artisan domely:unpair` and
-redeeming a fresh code at the terminal, and everybody loses access until that is done.
+redeeming a fresh code at the terminal, and everybody loses access until that is done. The same
+command is the way back when the home was deleted in the app. The add-on, which has no shell,
+reaches it from its sidebar page or its `unpair` option instead (`deploy/addon/DOCS.md`).
 
 Both volume names are prefixed with the compose project, which is the name of the directory the
 stack runs from: `standalone_agent-data` in this checkout, `domely_agent-data` under `/opt/domely`.
@@ -351,9 +353,9 @@ once needs a builder that is not the default one, and is what the release pipeli
 
 ```bash
 docker buildx create --name domely --driver docker-container --use
-docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.12 -t ghcr.io/domely-app/domely-adapter:0.1.12 agent/adapter
-docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.12 -t ghcr.io/domely-app/domely-api:0.1.12 agent/api
-docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.12 -t ghcr.io/domely-app/domely-tunnel:0.1.12 agent/tunnel
+docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.13 -t ghcr.io/domely-app/domely-adapter:0.1.13 agent/adapter
+docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.13 -t ghcr.io/domely-app/domely-api:0.1.13 agent/api
+docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.13 -t ghcr.io/domely-app/domely-tunnel:0.1.13 agent/tunnel
 ```
 
 Those are run from the repository root, and without `--push` they build and go nowhere, which is

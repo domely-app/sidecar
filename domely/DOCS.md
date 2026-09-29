@@ -131,7 +131,19 @@ the Agent still holds the identity it was handed at pairing, and it will not ask
 until it is told to forget it. It never decides that by itself, because a cloud that is briefly
 wrong about this house would otherwise take it offline.
 
-To make it forget:
+The Domely page in the sidebar says so when it happens: once Domely Cloud refuses this add-on's
+key, the page reads "Domely Cloud herkent dit huis niet meer" instead of linking to the app. It
+does not act on that by itself either.
+
+To make it forget, from the sidebar:
+
+1. Open Domely in the Home Assistant sidebar as a Home Assistant administrator.
+2. Under **Ontkoppelen**, type `ONTKOPPEL` and press the button. Only an administrator sees the
+   form, and nothing happens without the typed word.
+3. Refresh the page after a minute. It shows a new pairing code. Redeem it as in
+   [Pairing](#pairing).
+
+Or with the add-on's options:
 
 1. Find the home ID. The app shows it when you remove the home. It is also in the add-on's log:
    every start logs `Paired with Domely Cloud home=…`, and a home the cloud no longer knows logs it
@@ -144,8 +156,9 @@ pairing again this add-on belongs to a different one, so later restarts leave it
 Home Assistant administrator can change add-on options, which is what keeps this from being a
 button anyone in the house can press.
 
-Your rooms and devices keep their IDs, so shares still point at the same devices after pairing
-again.
+Either way your rooms and devices keep their IDs, so shares still point at the same devices after
+pairing again. Running Domely as a standalone container rather than as an add-on, the same step is
+`docker compose exec api php artisan domely:unpair`.
 
 What it is not is a reason to uninstall. Uninstalling takes `/data` with it, and `/data` is where
 your rooms, devices and above all their identities live, the identities every share you handed out
