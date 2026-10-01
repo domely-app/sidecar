@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.14] - 2026-10-01
+
+### Added
+
+- Media players can be published in Domely: play and pause, volume and the source, each only
+  when the player supports it.
+
 ## [0.1.13] - 2026-09-29
 
 ### Added
