@@ -8,6 +8,12 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.15] - 2026-10-02
+
+### Security
+
+- The API layer's Laravel and Markdown libraries are updated for three published advisories.
+
 ## [0.1.14] - 2026-10-01
 
 ### Added
