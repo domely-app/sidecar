@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.17] - 2026-10-05
+
+### Added
+
+- Someone who accepts an invitation sees the house at once, and someone who is removed loses access
+  at once, instead of within five minutes (#609).
+
 ## [0.1.16] - 2026-10-05
 
 ### Added
