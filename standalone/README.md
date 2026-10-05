@@ -9,14 +9,12 @@ different thing: it mounts the working copy into the runtime and watches it. Her
 built ahead of time, the TypeScript is compiled, the PHP dependencies are installed at build time,
 and nothing from the host is mounted, so what runs is the artifact.
 
-## Nothing is published yet
+## The images
 
-**The image tags in `compose.yml` resolve nowhere.** No image has been pushed to `ghcr.io` and no
-version tag has been cut, so `docker compose pull` fails and a plain `docker compose up` fails with
-it. That is the honest state of this milestone: the packaging is written and the pipeline that
-would publish it is run by nothing in this branch.
+Every release publishes the three images to `ghcr.io/domely-app`, for amd64 and arm64, and the tags
+in `compose.yml` are the release this file was written against. `docker compose pull` fetches them.
 
-What works today is building the three images from this checkout, which is one extra file:
+Building them from a checkout instead is one extra file:
 
 ```bash
 cd deploy/standalone
@@ -27,9 +25,7 @@ curl localhost:8080/health
 ```
 
 `compose.build.yml` adds one build context per service and changes nothing else, so what it builds
-is tagged exactly as what would have been pulled and every other setting is the shipped one. The
-rest of this file reads the same either way, and the day the tags resolve the second `-f` is what
-drops off.
+is tagged exactly as what would have been pulled and every other setting is the shipped one.
 
 ## Installing it, with Home Assistant in Docker
 
@@ -353,23 +349,18 @@ once needs a builder that is not the default one, and is what the release pipeli
 
 ```bash
 docker buildx create --name domely --driver docker-container --use
-docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.15 -t ghcr.io/domely-app/domely-adapter:0.1.15 agent/adapter
-docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.15 -t ghcr.io/domely-app/domely-api:0.1.15 agent/api
-docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.15 -t ghcr.io/domely-app/domely-tunnel:0.1.15 agent/tunnel
+docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.16 -t ghcr.io/domely-app/domely-adapter:0.1.16 agent/adapter
+docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.16 -t ghcr.io/domely-app/domely-api:0.1.16 agent/api
+docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.16 -t ghcr.io/domely-app/domely-tunnel:0.1.16 agent/tunnel
 ```
 
-Those are run from the repository root, and without `--push` they build and go nowhere, which is
-the only form of them this milestone has run. The build argument is what the container answers
+Those are run from the repository root, and without `--push` they build and go nowhere. The build argument is what the container answers
 with when asked which release it is (#322); leaving it out builds an image that says `dev`.
 
 ## Status
 
-Week 5, packaging. The stack is still the adapter, the API and the tunnel, and every route but
+The stack is the adapter, the API and the tunnel, and every route but
 `/health` and the adapter's own push needs a valid token.
-
-**Nothing is published.** No image has been pushed and no version tag has been cut, so the tags in
-`compose.yml` are what the first release will produce rather than something anybody can pull today.
-Building locally is the whole story until then, and the section at the top says how.
 
 **This stack serves no app.** There is nothing to open in a browser here beyond `/health`, and
 nothing to build before starting it: the PWA is served by Domely Cloud, which is a deployment of

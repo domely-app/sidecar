@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.16] - 2026-10-05
+
+### Added
+
+- The house can tell Domely support what it holds of who may use it, and a short log of how its
+  connections to Home Assistant and Domely Cloud went, without device states or names (#605).
+
 ## [0.1.15] - 2026-10-02
 
 ### Security
