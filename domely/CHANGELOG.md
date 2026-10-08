@@ -8,6 +8,14 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.18] - 2026-10-08
+
+### Added
+
+- A phone or browser that was signed out of Domely, or whose account changed its password, can no
+  longer reach the house with what it still held, instead of until its access ran out up to two
+  weeks later (#626).
+
 ## [0.1.17] - 2026-10-05
 
 ### Added
