@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.19] - 2026-10-08
+
+### Added
+
+- The add-on tells Domely that it is the add-on, so the app's update notice can say where in Home
+  Assistant to update it (#639).
+
 ## [0.1.18] - 2026-10-08
 
 ### Added
