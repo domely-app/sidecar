@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.20] - 2026-10-09
+
+### Fixed
+
+- The adapter no longer writes "Skipping the smoke test" to the status page on every start. The
+  line is meant for development and is now logged at `debug` (#649).
+
 ## [0.1.19] - 2026-10-08
 
 ### Added
