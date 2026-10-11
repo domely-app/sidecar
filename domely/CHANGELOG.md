@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.21] - 2026-10-11
+
+### Added
+
+- Home can be several dashboards, each shown to everyone or to the accounts you chose. The number a
+  house may have arrives from Domely Cloud (#669).
+
 ## [0.1.20] - 2026-10-09
 
 ### Fixed
