@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.22] - 2026-10-11
+
+### Added
+
+- Each member can switch off the notifications this house sends, per kind, from the Notifications
+  screen in the app. The house keeps the choice and nothing about it reaches Domely Cloud (#679).
+
 ## [0.1.21] - 2026-10-11
 
 ### Added
