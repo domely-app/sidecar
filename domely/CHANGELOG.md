@@ -8,6 +8,17 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.23] - 2026-10-12
+
+### Added
+
+- The house tells Domely Cloud when its published devices change, so Google Home picks them up
+  without linking again, and reports each device's type and abilities alongside its state, which
+  Google Home needs to show it (#318).
+- A cover's class is read from Home Assistant when it is published, so blinds, curtains, shutters
+  and awnings can reach Google Home. Covers published earlier get it the next time they are saved
+  (#463).
+
 ## [0.1.22] - 2026-10-11
 
 ### Added
