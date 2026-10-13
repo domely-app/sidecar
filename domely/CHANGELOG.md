@@ -8,6 +8,19 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.24] - 2026-10-13
+
+### Added
+
+- Each device has a "Niet naar Google Home" switch. A device with it set is left out of what the
+  house reports for Google Home (#706).
+
+### Changed
+
+- Publishing refuses a type that does not fit the entity's domain. A light and a switch may each
+  be the other, a cover is only ever a cover. Devices published earlier keep their type until it is
+  changed (#706).
+
 ## [0.1.23] - 2026-10-12
 
 ### Added
