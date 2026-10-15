@@ -12,6 +12,12 @@ and ships as images on GHCR.
 Settings, Add-ons, Add-on store, the three-dot menu, Repositories, and paste this repository's URL.
 Domely then appears in the store.
 
+### Edge, for a test house only
+
+`domely-edge/` is a second add-on, "Domely (edge)", built from the main branch before it is
+released. It has its own data and is not promised to coexist with the stable add-on. Leave it alone
+unless you are testing Domely itself.
+
 ## Home Assistant in Docker, as a container
 
 `standalone/compose.yml` runs the same three components beside your existing Home Assistant, with a

@@ -8,6 +8,27 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.25] - 2026-10-15
+
+### Added
+
+- A morning notification when the house used noticeably more at night than its median of the last
+  14 nights, read from Home Assistant's statistics for the grid import meter (#685).
+- The administrator is notified when an automation failed (#692) and when Home Assistant has been
+  unreachable for ten minutes (#691).
+- A grant can end on a date, and the house treats an ended grant as no grant (#654).
+
+### Changed
+
+- The quiet window between notifications is kept per kind, so one kind no longer silences another
+  (#685).
+
+### Fixed
+
+- Renaming a room that holds a published device triggers a Google Home sync (#730).
+- The adapter exits when its first connect to Home Assistant fails on a database that is not
+  migrated yet, instead of lingering (#736).
+
 ## [0.1.24] - 2026-10-13
 
 ### Added

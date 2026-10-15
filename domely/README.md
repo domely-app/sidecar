@@ -18,6 +18,15 @@ starts, you redeem it in the app, and that is the whole of setup. See the Docume
 **Nothing has been published yet.** No image has been pushed and no version has been tagged, so
 this add-on cannot be installed from the store until the first release is cut.
 
+## Edge
+
+The public repository also carries "Domely (edge)", the add-on image built from every push to
+`main` that touches `agent/` or `deploy/addon/`, versioned `<VERSION>-edge.<run number>`. Use it on
+a test house to run a merged change before a release is cut, and nowhere else. It has its own slug
+and so its own `/data`, it never appears as an update to the stable add-on, and it is not
+promised to coexist with it on one Home Assistant, and running them side by side is untested.
+Install one or the other. `.github/workflows/edge.yml` publishes it.
+
 ## In this repository
 
 The add-on is built from the repository root, not from this folder: it assembles the same three
