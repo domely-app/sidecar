@@ -1,3 +1,3 @@
-## 0.1.24-edge.6
+## 0.1.25-edge.7
 
 Built from main. Not a release.
