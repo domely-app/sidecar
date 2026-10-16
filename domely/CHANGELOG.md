@@ -8,6 +8,14 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.26] - 2026-10-16
+
+### Added
+
+- A notification when an appliance has finished: an energy meter the administrator marks "notify
+  when finished" counts a run above 10 W for five minutes, and idle below 5 W for three minutes.
+  It reaches only those who may see the device (#689).
+
 ## [0.1.25] - 2026-10-15
 
 ### Added
