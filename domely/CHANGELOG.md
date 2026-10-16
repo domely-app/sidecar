@@ -8,6 +8,14 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.27] - 2026-10-16
+
+### Added
+
+- A `contact` type for a door or window sensor, and a notification when one stays open longer
+  than the administrator set (10 minutes by default). It reaches only those who may see the
+  device (#686).
+
 ## [0.1.26] - 2026-10-16
 
 ### Added
