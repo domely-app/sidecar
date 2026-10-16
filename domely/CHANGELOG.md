@@ -8,6 +8,14 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.29] - 2026-10-16
+
+### Added
+
+- An administrator can publish a Home Assistant `number` or `select` entity, such as a battery's
+  charge power setpoint or its mode. The household sees it read-only; the administrator and
+  automations can set it (#526).
+
 ## [0.1.28] - 2026-10-16
 
 ### Added
