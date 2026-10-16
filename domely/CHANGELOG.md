@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.28] - 2026-10-16
+
+### Added
+
+- The house accepts the "Goed moment" block on its home screen, which says whether now is a good
+  moment to use power (#657).
+
 ## [0.1.27] - 2026-10-16
 
 ### Added
