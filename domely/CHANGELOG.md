@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.30] - 2026-10-17
+
+### Added
+
+- The house keeps the notifications it sent for a week, so the app can list them on the
+  notifications screen (#793).
+
 ## [0.1.29] - 2026-10-16
 
 ### Added
