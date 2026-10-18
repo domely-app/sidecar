@@ -8,6 +8,21 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.32] - 2026-10-18
+
+### Security
+
+- The internal channel only runs the Home Assistant services Domely issues (#872).
+- Event streams are limited per user and end when the token or the session does (#871).
+- A push subscription cannot be moved to another user and is capped per user (#874).
+- The adapter's log cannot be forged, the cloud address must be https and on one origin, and the
+  database file is private to the add-on (#873).
+- The API and the tunnel no longer inherit the supervisor token (#875).
+- The API logs less of what an unauthenticated caller sends, and its answers carry `nosniff` and
+  `no-store` (#870, #886).
+- A vulnerable HTTP library in the API is updated (#869), and the images' base layers are pinned
+  and carry provenance and an SBOM (#889).
+
 ## [0.1.31] - 2026-10-18
 
 ### Fixed
