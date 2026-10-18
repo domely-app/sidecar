@@ -8,6 +8,20 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.31] - 2026-10-18
+
+### Fixed
+
+- A state change right at start-up, or a first sync that fails, no longer leaves the mirror behind
+  (#808).
+- A Home Assistant restart no longer removes devices from Domely or switches automations off while
+  its integrations are still loading (#809).
+- Notifications are only sent to real push services (#803).
+- An empty state from Home Assistant is kept as it is, and two admin changes can no longer half
+  apply (#811).
+- The remote-access tunnel restarts less often, stops cleanly, and an interrupted first start no
+  longer stops the add-on from starting again (#812).
+
 ## [0.1.30] - 2026-10-17
 
 ### Added
