@@ -1,0 +1,43 @@
+# The names and help text shown on the add-on's Configuration tab. Every key here has to be a key
+# in config.yaml's schema, and deploy/addon/test.sh fails the build when an option has no entry:
+# an option nobody can read the purpose of is an option nobody sets correctly.
+#
+# https://developers.home-assistant.io/docs/apps/configuration
+
+configuration:
+  cloud_url:
+    name: Domely Cloud address
+    description: >-
+      The address of the Domely Cloud you have an account with, including https://. This is where
+      you redeem the pairing code the add-on shows you the first time it starts. Leave it as it is
+      unless you run a Domely Cloud of your own.
+  home_name:
+    name: Home name
+    description: >-
+      What the app calls this home. Leave it empty to call it Home.
+  log_level:
+    name: Log level
+    description: >-
+      How much the add-on writes to its log. Leave it on info unless you are chasing a problem:
+      debug logs every state change Home Assistant sends.
+  test_light_entity:
+    name: Smoke test light
+    description: >-
+      A light the add-on switches on and off once at startup to prove it can control Home
+      Assistant. Leave it empty to skip the test.
+  api_threads:
+    name: Simultaneous connections
+    description: >-
+      How many app connections this home serves at once. One is held for as long as a phone has
+      the app open, so count the phones in the house and leave some room.
+  cors_origins:
+    name: Allowed app origins
+    description: >-
+      Which addresses may open this home in a browser, comma separated. Leave it empty and the
+      Domely Cloud address above is used, which is where the app is served from.
+  unpair:
+    name: Unpair home
+    description: >-
+      Makes the add-on forget its pairing on the next start, so it shows a new pairing code. Fill
+      in the home ID from the add-on's log and restart. Any other value is ignored, so it is safe
+      to leave filled in afterwards.
