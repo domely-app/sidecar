@@ -8,6 +8,15 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.33] - 2026-10-19
+
+### Changed
+
+- The tunnel is updated to cloudflared 2026.10.1.
+- The API's Laravel framework and JWT library, and the adapter's WebSocket libraries (ws and
+  home-assistant-js-websocket), are updated.
+- The adapter is built with TypeScript 7.
+
 ## [0.1.32] - 2026-10-18
 
 ### Security
