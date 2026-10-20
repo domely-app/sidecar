@@ -8,6 +8,19 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.36] - 2026-10-20
+
+### Added
+
+- Home shows what electricity is expected to cost today and tomorrow, and the cheapest two hours,
+  for a house with a dynamic contract (#531, #664).
+
+## [0.1.35] - 2026-10-20
+
+### Added
+
+- An energy flow widget for Home, for a house with solar, a battery or an EV charger (#778).
+
 ## [0.1.34] - 2026-10-20
 
 ### Added
