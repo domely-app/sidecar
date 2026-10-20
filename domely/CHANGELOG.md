@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.37] - 2026-10-20
+
+### Added
+
+- The Agent keeps what the administrator chose Domely may steer, and how long each appliance runs,
+  for the new energy steering setup in the app (#537).
+
 ## [0.1.36] - 2026-10-20
 
 ### Added
