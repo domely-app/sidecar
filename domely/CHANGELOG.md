@@ -8,6 +8,16 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.34] - 2026-10-20
+
+### Added
+
+- The house's solar forecast can be chosen as an energy role, "Zonneprognose" (#530).
+
+### Changed
+
+- The add-on links to its public distribution (#946).
+
 ## [0.1.33] - 2026-10-19
 
 ### Changed
