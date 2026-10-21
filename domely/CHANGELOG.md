@@ -8,6 +8,14 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.39] - 2026-10-21
+
+### Added
+
+- The energy steering setup proposes an appliance's run time and deadline from its own past runs
+  in Home Assistant's history, and says so. An appliance without enough runs keeps 120 minutes,
+  ready by 07:00 (#1003).
+
 ## [0.1.38] - 2026-10-21
 
 ### Added
