@@ -8,11 +8,17 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.43] - 2026-10-21
+
+### Security
+
+- Runs on PHP 8.5.12, which fixes a CVE in PHP itself. 0.1.42 still shipped 8.5.11 (#1030).
+
 ## [0.1.42] - 2026-10-21
 
 ### Security
 
-- Runs on PHP 8.5.12, which fixes a CVE in PHP itself. 0.1.41 shipped 8.5.11 (#1028).
+- Meant to move to PHP 8.5.12 and did not: this version still runs PHP 8.5.11. Update to 0.1.43.
 
 ## [0.1.41] - 2026-10-21
 
