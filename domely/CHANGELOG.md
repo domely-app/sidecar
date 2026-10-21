@@ -8,6 +8,15 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.38] - 2026-10-21
+
+### Added
+
+- The Agent switches the appliances chosen in the energy steering setup at their planned quarter
+  hour, gives way to a person switching one by hand, and hands every device back when the prices
+  run out. No battery is steered yet (#535).
+- A weather entity can be tagged as the house's weather forecast (#665).
+
 ## [0.1.37] - 2026-10-20
 
 ### Added
