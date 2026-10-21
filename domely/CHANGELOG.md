@@ -8,6 +8,15 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.41] - 2026-10-21
+
+### Added
+
+- Today's plan for the app's plan screen: the price per quarter hour, each appliance's planned
+  run and the battery's plan when one is steered (#538).
+- Pausing steering for the rest of the day: every steered device goes back to its normal mode
+  until midnight in the house's time zone (#538).
+
 ## [0.1.40] - 2026-10-21
 
 ### Added
