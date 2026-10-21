@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.40] - 2026-10-21
+
+### Added
+
+- A notification in the evening when tomorrow's solar forecast is at least 5 kWh more than the
+  house is expected to use, so the washing can wait for the afternoon (#684).
+
 ## [0.1.39] - 2026-10-21
 
 ### Added
