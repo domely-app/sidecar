@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.44] - 2026-10-23
+
+### Changed
+
+- The plan screen is answered for the next 24 hours rather than up to midnight, so tomorrow's
+  prices and plan show once they are in (#1037).
+
 ## [0.1.43] - 2026-10-21
 
 ### Security
