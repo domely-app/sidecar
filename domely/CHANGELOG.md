@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.45] - 2026-10-25
+
+### Changed
+
+- A saved Home layout may hold the expected cost widget, so the expected electricity cost can be
+  removed from Home and added back (#1055).
+
 ## [0.1.44] - 2026-10-23
 
 ### Changed
