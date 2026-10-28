@@ -16,7 +16,7 @@ which ones. Everything else in Home Assistant stays yours.
 ## Installing
 
 1. Settings, Add-ons, Add-on store, then the three-dot menu, Repositories, and add
-   `https://github.com/domely-app/application`.
+   `https://github.com/domely-app/sidecar`.
 2. Install **Domely** from the store.
 3. On the Configuration tab, fill in **Domely Cloud address**. The add-on will not start without
    it. Everything else can stay as it is.
@@ -187,6 +187,6 @@ in front of it.
 
 ## License
 
-Domely is open source, [Apache-2.0](https://github.com/domely-app/application/blob/main/LICENSE). The
+Domely is open source, [Apache-2.0](https://github.com/domely-app/sidecar/blob/main/LICENSE). The
 add-on you install here, and everything it runs, is code you can read. Domely Cloud, the part that
 handles accounts and pairing, is not open source.

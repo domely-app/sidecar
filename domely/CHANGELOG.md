@@ -8,6 +8,15 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.46] - 2026-10-28
+
+### Changed
+
+- The battery plan no longer sells a full battery on a sunny midday: energy left at the end of
+  the plan is valued at the lowest positive import price (#533).
+- The tunnel is updated to cloudflared 2026.10.3, and the add-on's Home Assistant base image to
+  its latest 3.24 build.
+
 ## [0.1.45] - 2026-10-25
 
 ### Changed
