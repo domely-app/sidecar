@@ -110,6 +110,13 @@ placed in no area is offered too, unticked, under a group of its own.
 | `api` | Laravel on FrankenPHP, the public API | `127.0.0.1:8080`, loopback only |
 | `tunnel` | `cloudflared`, the way in from outside | Nothing. It dials out |
 
+The `api` container runs a second process beside FrankenPHP: the verifier, which Caddy asks on
+loopback, through `forward_auth`, before a request reaches PHP
+([ADR-0044](../../docs/adr/0044-a-verifier-in-front-of-php.md)). It reads the identity row from the
+data volume and reads the API layer's own `JWT_LEEWAY` and `CORS_ORIGINS`. A crash is restarted
+inside the container; a configuration it refuses stops the container, as a failed migration does.
+While it is down every request that needs a token is a `502`, and `/health` still answers.
+
 The adapter's port is its internal command channel (ADR-0004), which is how the API layer executes
 a service call. It is in no `ports:` mapping, so it is reachable by service name from the other
 container and from nothing outside this stack, and `ADAPTER_SECRET` is required on every request
@@ -349,9 +356,9 @@ once needs a builder that is not the default one, and is what the release pipeli
 
 ```bash
 docker buildx create --name domely --driver docker-container --use
-docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.47 -t ghcr.io/domely-app/domely-adapter:0.1.47 agent/adapter
-docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.47 -t ghcr.io/domely-app/domely-api:0.1.47 agent/api
-docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.47 -t ghcr.io/domely-app/domely-tunnel:0.1.47 agent/tunnel
+docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.48 -t ghcr.io/domely-app/domely-adapter:0.1.48 agent/adapter
+docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.48 -t ghcr.io/domely-app/domely-api:0.1.48 -f agent/api/Dockerfile .
+docker buildx build --platform linux/amd64,linux/arm64 --build-arg BUILD_VERSION=0.1.48 -t ghcr.io/domely-app/domely-tunnel:0.1.48 agent/tunnel
 ```
 
 Those are run from the repository root, and without `--push` they build and go nowhere. The build argument is what the container answers

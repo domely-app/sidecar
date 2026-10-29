@@ -8,6 +8,13 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.48] - 2026-10-29
+
+### Security
+
+- A request without a valid token is now refused before PHP reads it, by a verifier that runs
+  beside the adapter (#1083).
+
 ## [0.1.47] - 2026-10-29
 
 ### Changed
