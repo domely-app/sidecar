@@ -8,6 +8,12 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.47] - 2026-10-29
+
+### Changed
+
+- The API layer's Laravel framework is updated to 13.38.
+
 ## [0.1.46] - 2026-10-28
 
 ### Changed
