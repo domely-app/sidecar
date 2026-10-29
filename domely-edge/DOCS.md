@@ -91,7 +91,7 @@ There is no option for a different address, and adding one would mean a second c
 for a single connection.
 
 If what you want is Domely at a house whose Home Assistant runs somewhere else, that is the other
-supported way to run it: the **standalone** stack, a small compose file with the same three
+supported way to run it: the **standalone** stack, a small compose file with the same four
 processes in three containers, which reaches Home Assistant over your network with a long-lived
 token you create. It is not a lesser option or a development mode, and a large part of the Home
 Assistant community runs that way. See `deploy/standalone` in the repository.
