@@ -8,6 +8,15 @@ entries and `config.yaml` disagree.
 
 ## Unreleased
 
+## [0.1.49] - 2026-11-02
+
+### Changed
+
+- The API layer requires PHP 8.5.12 or newer (#1026), and its Laravel framework is updated to
+  13.39.
+- cloudflared is updated to 2026.10.6, home-assistant-js-websocket to 9.8.1, and the FrankenPHP
+  and Home Assistant base images to their newest digests.
+
 ## [0.1.48] - 2026-10-29
 
 ### Security
